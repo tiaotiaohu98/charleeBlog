@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="/static/bootstrap-4.6.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="{% static 'bootstrap-4.6.2/css/bootstrap.min.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>用户信息</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>手机号</th>
+            <th>归属地</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.phone }}</td>
+                <td>{{ row.city }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!--<script src="/static/bootstrap-4.6.2/js/bootstrap.min.js"></script>
+<script src="/static/jQuery/jquery-3.7.0.min.js"></script>-->
+<script src="{% static 'bootstrap-4.6.2/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'jQuery/jquery-3.7.0.min.js' %}"></script>
+
+</body>
+</html>
